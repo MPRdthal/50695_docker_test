@@ -1,13 +1,13 @@
 FROM rocker/tidyverse:3.5.3
 LABEL maintainer="Dan Thal <dthal@mathematica-mpr.com>"
 
-ENV PILOT=STATE
-ENV GROUP=RG
-ENV OUTCOME=Y
-ENV WARMUP=WM
-ENV DRAWS=DW
-ENV THIN=THN
-ENV CHAINS=CHN
+ENV PILOT=MS
+ENV GROUP=treat
+ENV OUTCOME=TERNFQ4
+ENV WARMUP=100
+ENV DRAWS=100
+ENV THIN=2
+ENV CHAINS=4
 
 #install deps for linux / R   ##any need to restrict these to older versions?
 RUN apt-get update -y && \
