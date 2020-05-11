@@ -28,4 +28,4 @@ RUN git clone https://github.com/MPRdthal/50695_docker_test.git
 WORKDIR /home/50695_docker_test
 
 ENTRYPOINT ["R", "-e", "rmarkdown::render(run_test.rmd, params=list(grantee=PILOT, group=GROUP, outcome=Y, warmup=WM, draws=DW, thin=THN, chains=CHN, cores=CHN)"]
-RUN aws s3 cp run_bcf.html s3://50695-test/htmls/Y_PILOT_GROUP.html
+RUN aws s3 cp run_bcf.html s3://50695-test/htmls/fake_Y_PILOT_GROUP.html
