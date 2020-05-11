@@ -28,4 +28,4 @@ RUN git clone https://github.com/MPRdthal/50695_docker_test.git
 WORKDIR /home/50695_docker_test
 
 #ENTRYPOINT ["R", "-e", "run_run_test.R", PILOT, GROUP, OUTCOME, WARMUP, DRAWS, THIN, CHAINS]
-ENTRYPOINT sudo su --c "Rscript -e \"run_run_test.R\" PILOT GROUP OUTCOME WARMUP DRAWS THIN CHAINS"
+ENTRYPOINT Rscript run_run_test.R PILOT GROUP OUTCOME WARMUP DRAWS THIN CHAINS
