@@ -26,6 +26,7 @@ EXPOSE 8787
 #install scripts to container
 RUN git clone https://github.com/MPRdthal/50695_docker_test.git
 RUN cd 50695_docker_test
+RUN ls -la
 
 #ENTRYPOINT ["R", "-e", "run_run_test.R", PILOT, GROUP, OUTCOME, WARMUP, DRAWS, THIN, CHAINS]
 ENTRYPOINT Rscript /run_run_test.R PILOT GROUP OUTCOME WARMUP DRAWS THIN CHAINS
