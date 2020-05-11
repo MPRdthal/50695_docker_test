@@ -27,4 +27,5 @@ EXPOSE 8787
 RUN git clone https://github.com/MPRdthal/50695_docker_test.git
 WORKDIR /home/50695_docker_test
 
-ENTRYPOINT ["R", "-e", "run_run_test.R", PILOT, GROUP, OUTCOME, WARMUP, DRAWS, THIN, CHAINS]
+#ENTRYPOINT ["R", "-e", "run_run_test.R", PILOT, GROUP, OUTCOME, WARMUP, DRAWS, THIN, CHAINS]
+ENTRYPOINT sudo su --c "R -e \"run_run_test.R PILOT GROUP OUTCOME WARMUP DRAWS THIN CHAINS\""
