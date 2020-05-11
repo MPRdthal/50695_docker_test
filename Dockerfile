@@ -24,6 +24,7 @@ RUN apt-get update -y && \
 EXPOSE 8787
 
 #install scripts to container
+ADD https://api.github.com/repos/MPRdthal/50695_docker_test/git/refs/heads/master version.json
 RUN git clone https://github.com/MPRdthal/50695_docker_test.git
 WORKDIR /50695_docker_test
 RUN ls -la
