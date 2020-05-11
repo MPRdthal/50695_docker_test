@@ -1,0 +1,38 @@
+---
+author: "Dan"
+date: "`r Sys.Date()`"
+params: 
+  grantee: "MS"
+  group: "treat"
+  outcome: "TERNFQ4"
+  chains: 4
+  cores: 4
+  threads: 2
+  warmup: 5000
+  draws: 500
+  thin: 10
+output:
+  html_document:
+    code_folding: hide
+    toc: true
+    toc_float:
+      collapsed: false
+      smooth_scroll: false
+    code_download: true
+title: "`r glue::glue('BCF on {params$outcome} for {params$grantee} {params$group}')`"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(glue)
+library(BART)
+library(bcf)
+library(tictoc)
+```
+
+## Data prep
+
+```{r data}
+lapply(params,print)
+```
