@@ -24,11 +24,6 @@ title: "`r glue::glue('BCF on {params$outcome} for {params$grantee} {params$grou
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-library(tidyverse)
-library(glue)
-library(BART)
-library(bcf)
-library(tictoc)
 ```
 
 ## Data prep
