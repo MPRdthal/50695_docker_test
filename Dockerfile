@@ -21,6 +21,10 @@ RUN apt-get update -y && \
 		git \
         awscli
 
+RUN echo "options(repos = c(CRAN = 'https://cran.rstudio.com/'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site
+RUN install2.r -d TRUE -n 4 --error \
+      glue
+
 EXPOSE 8787
 
 #install scripts to container
@@ -30,4 +34,5 @@ WORKDIR /50695_docker_test
 RUN ls -la
 
 #ENTRYPOINT ["R", "-e", "run_run_test.R", PILOT, GROUP, OUTCOME, WARMUP, DRAWS, THIN, CHAINS]
-ENTRYPOINT Rscript run_run_test.R $PILOT $GROUP $OUTCOME $WARMUP $DRAWS $THIN $CHAINS
+#ENTRYPOINT Rscript run_run_test.R $PILOT $GROUP $OUTCOME $WARMUP $DRAWS $THIN $CHAINS
+ENTRYPOINT Rscrip really_dumb_test.R $PILOT $GROUP $OUTCOME $WARMUP $DRAWS $THIN $CHAINS
